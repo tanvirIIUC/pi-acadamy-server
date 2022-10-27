@@ -23,6 +23,12 @@ app.get('/course/:id', (req, res) => {
     res.send(all_course );
   })
 
+  app.get('/topicsDetails/:id', (req, res) => {
+    const id = req.params.id;
+    const selectedTopic = topicsDetails.find(n => n._id === id);
+    res.send(selectedTopic);
+});
+
 
 /* app.get('/news', (req, res) => {
     res.send(topicsDetails);
